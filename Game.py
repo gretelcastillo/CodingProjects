@@ -51,8 +51,8 @@ def main():
             gym(hearts)
         elif roomNum == 4:
             playground(hearts)
-        #elif roomNum == 5:
-            #cafeteria()
+        elif roomNum == 5:
+            cafeteria()
 
         if hearts <= 0:
             print("Game Over! You lost all your hearts.")
@@ -1931,7 +1931,154 @@ def playground(hearts):
 
     return hearts
 
+def cafeteria():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-390, 270)
+    pen.pencolor("white")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write('You have entered: The Cafeteria', font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 240)
+    pen.pendown()
+    pen.write("Task: Playing Tic Tac Toe with the Computer", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-100, 200)
+    pen.setheading(270)
+    pen.pendown()
+    pen.forward(300)
+
+    pen.penup()
+    pen.goto(100, 200)
+    pen.setheading(270)
+    pen.pendown()
+    pen.forward(300)
+
+    pen.penup()
+    pen.goto(-250, 0)
+    pen.setheading(0)
+    pen.pendown()
+    pen.forward(500)
+
+    pen.penup()
+    pen.goto(-250,100)
+    pen.setheading(0)
+    pen.pendown()
+    pen.forward(500)
+
+    pen.penup()
+    pen.goto(-190, 180)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("1", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-10, 180)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("2", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(170, 180)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("3", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-190, 60)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("4", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-10, 60)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("5", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(170, 60)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("6", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-190, -40)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("7", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-10, -40)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("8", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(170, -40)
+    pen.pendown()
+    pen.color("yellow")
+    pen.write("9", font=('Comic Sans MS', 24, 'bold'))
 
 
+
+
+
+    computerSymbol = " "
+    userSymbol = " "
+
+    pen.penup()
+    pen.goto(-390, -140)
+    pen.pendown()
+    pen.pencolor("yellow")
+    pen.write("Reminder: Yellow numbers on board indicate position on board ", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -170)
+    pen.pendown()
+    pen.pencolor("midnightblue")
+    pen.write("Which symbol do you choose (X or O)? (type on console): ", font=('Comic Sans MS', 24, 'bold'))
+    userSymbol = input("Which symbol do you choose (X or O)? : ")
+
+
+    while userSymbol != "X" and userSymbol != "O":
+        userSymbol = input("Invalid input. Please try again: ")
+
+    if userSymbol == "X":
+        computerSymbol = "O"
+    elif userSymbol == "O":
+        computerSymbol = "X"
+
+
+
+
+
+
+    pen.penup()
+    pen.goto(-390, -285)
+    pen.pendown()
+    pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+    pen.hideturtle()
+
+    screen.update()
+
+    # Close Graphics
+    # Time to close
+
+    input("Press Enter to continue...")
+
+    screen.clear()
 
 main()
