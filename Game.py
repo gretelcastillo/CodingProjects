@@ -52,7 +52,7 @@ def main():
         elif roomNum == 4:
             playground(hearts)
         elif roomNum == 5:
-            cafeteria()
+            cafeteria(hearts)
 
         if hearts <= 0:
             print("Game Over! You lost all your hearts.")
@@ -1931,7 +1931,7 @@ def playground(hearts):
 
     return hearts
 
-def cafeteria():
+def cafeteria(hearts):
     screen = turtle.Screen()
     screen.title("Ghost Hunter")
     screen.setup(800, 600)
@@ -1939,6 +1939,14 @@ def cafeteria():
 
     pen = turtle.Turtle()
     pen.speed(0)
+
+    hearts_pen = turtle.Turtle()
+    hearts_pen.hideturtle()
+    hearts_pen.speed(0)
+    hearts_pen.penup()
+    hearts_pen.pencolor("white")
+    hearts_pen.goto(60, 270)
+    hearts_pen.write(f"Current Hearts: {'❤️' * hearts}", font=('Comic Sans MS', 24, 'bold'))
 
     # Write Title
     pen.penup()
@@ -2034,10 +2042,13 @@ def cafeteria():
 
 
 
+    computerMove = random.randint(1, 9)
+    userMove = 0
 
+    board = [[' ', ' ', ' '],
+             [' ', ' ', ' '],
+             [' ', ' ', ' ']]
 
-    computerSymbol = " "
-    userSymbol = " "
 
     pen.penup()
     pen.goto(-390, -140)
@@ -2046,28 +2057,115 @@ def cafeteria():
     pen.write("Reminder: Yellow numbers on board indicate position on board ", font=('Comic Sans MS', 24, 'bold'))
 
     pen.penup()
-    pen.goto(-390, -170)
+    pen.goto(-390, 70)
     pen.pendown()
-    pen.pencolor("midnightblue")
-    pen.write("Which symbol do you choose (X or O)? (type on console): ", font=('Comic Sans MS', 24, 'bold'))
-    userSymbol = input("Which symbol do you choose (X or O)? : ")
+    pen.pencolor("red")
+    pen.write("Computer's", font=('Comic Sans MS', 24, 'bold'))
 
+    pen.penup()
+    pen.goto(-390, 40)
+    pen.pendown()
+    pen.pencolor("red")
+    pen.write("Symbol: O ", font=('Comic Sans MS', 24, 'bold'))
 
-    while userSymbol != "X" and userSymbol != "O":
-        userSymbol = input("Invalid input. Please try again: ")
+    pen.penup()
+    pen.goto(270, 70)
+    pen.pendown()
+    pen.pencolor("purple")
+    pen.write("Your", font=('Comic Sans MS', 24, 'bold'))
 
-    if userSymbol == "X":
-        computerSymbol = "O"
-    elif userSymbol == "O":
-        computerSymbol = "X"
+    pen.penup()
+    pen.goto(270, 40)
+    pen.pendown()
+    pen.pencolor("purple")
+    pen.write("Symbol:", font=('Comic Sans MS', 24, 'bold'))
 
+    pen.penup()
+    pen.goto(270, 10)
+    pen.pendown()
+    pen.pencolor("purple")
+    pen.write("X", font=('Comic Sans MS', 24, 'bold'))
 
+    while True:
 
+        pen.penup()
+        pen.goto(-390, -170)
+        pen.pendown()
+        pen.pencolor("midnightblue")
+        pen.write("Enter your move (1-9)? (on the console): ", font=('Comic Sans MS', 24, 'bold'))
+        #user_move = int(input("Enter your move (1-9)? : "))
 
+        while True:
+            try:
+                user_move = int(input("Enter your move (1-9)? : "))
+                if 1 <= user_move <= 9 and is_valid_move(board, user_move):
+                    break
+                print("Invalid move. Try again.", end="")
+            except ValueError:
+                print("Please enter a number between 1 and 9.", end="")
+
+        place_move(board, user_move, 'X', pen)
+
+        if has_winner(board, 'X'):
+            pen.penup()
+            pen.pencolor("red")
+            pen.goto(-390, -200)
+            pen.pendown()
+            pen.write("You won! You get a heart! The ghost isn't here, you may go to", font=('Comic Sans MS', 24, 'bold'))
+            pen.penup()
+            pen.goto(-390, -230)
+            pen.pendown()
+            pen.write("another room.", font=('Comic Sans MS', 24, 'bold'))
+            print("You won!")
+            break
+
+        if is_board_full(board):
+            pen.penup()
+            pen.pencolor("red")
+            pen.goto(-390, -200)
+            pen.pendown()
+            pen.write("It's a tie! You lost a heart! The ghost isn't here, you may go to",font=('Comic Sans MS', 24, 'bold'))
+            pen.penup()
+            pen.goto(-390, -230)
+            pen.pendown()
+            pen.write("another room.", font=('Comic Sans MS', 24, 'bold'))
+            print("It's a tie! You lost a heart! The ghost isn't here, you may go to another room.")
+            break
+
+        # Computer's Turn
+        computer_move = computer_turn(board)
+        print(f"Computer chose {computer_move}")
+        place_move(board, computer_move, 'O', pen)
+
+        if has_winner(board, 'O'):
+            
+            pen.penup()
+            pen.pencolor("red")
+            pen.penup()
+            pen.pencolor("red")
+            pen.goto(-390, -200)
+            pen.pendown()
+            pen.write("Computer wins! Game Over", font=('Comic Sans MS', 24, 'bold'))
+            print("Computer wins! Game Over", end="")
+            break
+
+        if is_board_full(board):
+            hearts_pen.clear()
+            hearts_pen.write(f"Final Hearts: {'❤️' * hearts}", font=('Comic Sans MS', 24, 'bold'))
+            pen.penup()
+            pen.pencolor("red")
+            pen.penup()
+            pen.pencolor("red")
+            pen.goto(-390, -200)
+            pen.pendown()
+            pen.write("It's a tie! The ghost isn't here, you may go to another room.", font=('Comic Sans MS', 24, 'bold'))
+            print("It's a tie! The ghost isn't here, you may go to another room.")
+            break
 
 
     pen.penup()
     pen.goto(-390, -285)
+    pen.pencolor("midnightblue")
     pen.pendown()
     pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
     pen.hideturtle()
@@ -2080,5 +2178,54 @@ def cafeteria():
     input("Press Enter to continue...")
 
     screen.clear()
+
+def is_valid_move(board, position):
+    row, col = (position - 1) // 3, (position - 1) % 3
+    return board[row][col] == ' '
+
+def place_move(board, position, symbol, pen):
+    positions = {
+        1: (-190, 120), 2: (-10, 120), 3: (170, 120),
+        4: (-190, 10),  5: (-10, 10),  6: (170, 10),
+        7: (-190, -90), 8: (-10, -90), 9: (170, -90)
+    }
+
+    row, col = (position - 1) // 3, (position - 1) % 3
+    board[row][col] = symbol
+
+    pen.penup()
+    pen.goto(positions[position])
+    pen.pendown()
+
+    pen.color("purple" if symbol == 'X' else "red")
+    pen.write(symbol, font=('Comic Sans MS', 52, 'bold'))
+
+
+def has_winner(board, symbol):
+    for row in board:
+        if row[0] == row[1] == row[2] == symbol:
+            return True
+    for col in range(3):
+        if board[0][col] == board[1][col] == board[2][col] == symbol:
+            return True
+    if (board[0][0] == board[1][1] == board[2][2] == symbol) or (board[0][2] == board[1][1] == board[2][0] == symbol):
+        return True
+    return False
+
+def is_board_full(board):
+    for row in board:
+        for cell in row:
+            if cell == ' ':
+                return False
+    return True
+
+def computer_turn(board):
+    while True:
+        computer_move = random.randint(1, 9)
+        if is_valid_move(board, computer_move):
+            return computer_move
+
+
+
 
 main()
