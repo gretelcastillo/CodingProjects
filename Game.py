@@ -2107,6 +2107,10 @@ def cafeteria(hearts):
         place_move(board, user_move, 'X', pen)
 
         if has_winner(board, 'X'):
+            if hearts < 3:
+                hearts += 1
+            hearts_pen.clear()
+            hearts_pen.write(f"Final Hearts: {'❤️' * hearts}", font=('Comic Sans MS', 24, 'bold'))
             pen.penup()
             pen.pencolor("red")
             pen.goto(-390, -200)
@@ -2120,6 +2124,10 @@ def cafeteria(hearts):
             break
 
         if is_board_full(board):
+            hearts -= 1
+            hearts_pen.clear()
+            hearts_pen.write(f"Final Hearts: {'❤️' * hearts}", font=('Comic Sans MS', 24, 'bold'))
+
             pen.penup()
             pen.pencolor("red")
             pen.goto(-390, -200)
@@ -2138,27 +2146,36 @@ def cafeteria(hearts):
         place_move(board, computer_move, 'O', pen)
 
         if has_winner(board, 'O'):
-            
+            hearts -= 1
+            hearts_pen.clear()
+            hearts_pen.write(f"Final Hearts: {'❤️' * hearts}", font=('Comic Sans MS', 24, 'bold'))
+
             pen.penup()
             pen.pencolor("red")
             pen.penup()
             pen.pencolor("red")
             pen.goto(-390, -200)
             pen.pendown()
-            pen.write("Computer wins! Game Over", font=('Comic Sans MS', 24, 'bold'))
-            print("Computer wins! Game Over", end="")
+            pen.write("Computer wins! Game Over!", font=('Comic Sans MS', 24, 'bold'))
+            print("Computer wins! Game Over!", end="")
             break
 
         if is_board_full(board):
+            hearts -= 1
             hearts_pen.clear()
             hearts_pen.write(f"Final Hearts: {'❤️' * hearts}", font=('Comic Sans MS', 24, 'bold'))
+
             pen.penup()
             pen.pencolor("red")
             pen.penup()
             pen.pencolor("red")
             pen.goto(-390, -200)
             pen.pendown()
-            pen.write("It's a tie! The ghost isn't here, you may go to another room.", font=('Comic Sans MS', 24, 'bold'))
+            pen.write("It's a tie! You lost a heart! The ghost isn't here, you may go to another room.", font=('Comic Sans MS', 24, 'bold'))
+            pen.penup()
+            pen.goto(-390, -230)
+            pen.pendown()
+            pen.write("another room.", font=('Comic Sans MS', 24, 'bold'))
             print("It's a tie! The ghost isn't here, you may go to another room.")
             break
 
