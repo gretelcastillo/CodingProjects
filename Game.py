@@ -44,14 +44,19 @@ def main():
             roomNum = int(input("Invalid room number. Enter room number (1-5): "))
 
         if roomNum == 1:
+            principalOfficeInstructions()
             hearts = principalOffice(hearts)
         elif roomNum == 2:
+            msMimiClassInstructions()
             msMimiClass(hearts)
         elif roomNum == 3:
+            gymInstructions()
             gym(hearts)
         elif roomNum == 4:
+            playgroundInstructions()
             playground(hearts)
         elif roomNum == 5:
+            cafeteriaInstructions()
             cafeteria(hearts)
 
         if hearts <= 0:
@@ -823,6 +828,79 @@ def chooseRoom():
     input("Press Enter to continue...")
     pen.clear()
 
+def principalOfficeInstructions():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write('Special Instructions for: The Playground', font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.pendown()
+    pen.write("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.pendown()
+    pen.write("Game Instructions: You must guess a randomly chosen number", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.pendown()
+    pen.write("between 1 and 10. You have a maximum of 5 attempts to guess", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.pendown()
+    pen.write("the correct number. ", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.color("purple")
+    pen.pendown()
+    pen.write("Gaining Hearts: If you guess the correct number on the first",font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.pendown()
+    pen.write("attempt, you gain one heart ❤️.",font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 50)
+    pen.color("red")
+    pen.pendown()
+    pen.write("Losing Hearts: If you fail to guess correctly within 5 attempts,",font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 20)
+    pen.pendown()
+    pen.write("you lose one heart.", font=('Comic Sans MS', 24, 'bold'))
+
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.pencolor("midnightblue")
+    pen.pendown()
+    pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+
+    # Close Graphics
+    # Time to close
+    input("Press Enter to continue...")
+    screen.clear()
+
+
 def principalOffice(hearts):
     screen = turtle.Screen()
     screen.title("Ghost Hunter")
@@ -941,6 +1019,84 @@ def principalOffice(hearts):
 
     schoolmap()
     chooseRoom()
+
+def msMimiClassInstructions():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write("Special Instructions for: Ms. Mimi's Class", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.pendown()
+    pen.write("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.pendown()
+    pen.write("Game Instructions: You must play 3 rounds of Rock, Paper,", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.pendown()
+    pen.write("Scissors against the computer.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.color("purple")
+    pen.pendown()
+    pen.write("Gaining Hearts: If you beat the computer in a round, you", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.pendown()
+    pen.write("gain one heart ❤️.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.color("red")
+    pen.pendown()
+    pen.write("Losing Hearts: If the computer wins a round, you lose", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 50)
+    pen.pendown()
+    pen.write("one heart.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 20)
+    pen.color("midnightblue")
+    pen.pendown()
+    pen.write("Draw: If both you and the computer choose the same move, no ", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -10)
+    pen.pendown()
+    pen.write("hearts are won or lost.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.pencolor("midnightblue")
+    pen.pendown()
+    pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+
+    # Close Graphics
+    # Time to close
+    input("Press Enter to continue...")
+    screen.clear()
+
 
 
 
@@ -1080,6 +1236,89 @@ def msMimiClass(hearts):
     input("Press Enter to continue...")
     screen.clear()
     return hearts
+
+def gymInstructions():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write("Special Instructions for: The Gym", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.pendown()
+    pen.write("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.pendown()
+    pen.write("Game Instructions: You must complete a Word Search Challenge.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.pendown()
+    pen.write("The challenge involves finding 16 fitness-related words hidden", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.pendown()
+    pen.write("in a grid.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.color("purple")
+    pen.pendown()
+    pen.write("Gaining Hearts: If all the words are found in under 5 minutes you", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.pendown()
+    pen.write("earn one heart ❤️.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 50)
+    pen.color("red")
+    pen.pendown()
+    pen.write("Losing Hearts: If it takes longer than 10 minutes for you to find", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 20)
+    pen.pendown()
+    pen.write("all the words you lose one heart.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -10)
+    pen.color("midnightblue")
+    pen.pendown()
+    pen.write("No Gain or Lost Hearts: If you find all the words between 5 and", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -40)
+    pen.pendown()
+    pen.write("10 minutes no hearts are won or lost.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.pencolor("midnightblue")
+    pen.pendown()
+    pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+
+    # Close Graphics
+    # Time to close
+    input("Press Enter to continue...")
+    screen.clear()
+
 
 def gym(hearts):
     screen = turtle.Screen()
@@ -1389,6 +1628,94 @@ def gym(hearts):
     screen.clear()
 
     return hearts
+
+def playgroundInstructions():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write("Special Instructions for: The Playground", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.pendown()
+    pen.write("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.pendown()
+    pen.write("Game Instructions: You must complete a Hangman Challenge. It", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.pendown()
+    pen.write("involves guessing the correct letters to complete the hidden", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.pendown()
+    pen.write("word while avoiding too many incorrect guesses.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.color("purple")
+    pen.pendown()
+    pen.write("Gaining Hearts: If you complete the hidden word with 9 tries", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.pendown()
+    pen.write("and no incorrect guesses you gain one heart ❤️.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 50)
+    pen.color("red")
+    pen.pendown()
+    pen.write("Losing Hearts: If you make 6 or more incorrect guesses you lose", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 20)
+    pen.pendown()
+    pen.write("the game.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -10)
+    pen.color("midnightblue")
+    pen.pendown()
+    pen.write("No Gain or Lost Hearts: If you complete the hidden word with", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -40)
+    pen.pendown()
+    pen.write("more than 9 tries and less than 6 incorrect guesses you don't", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -70)
+    pen.pendown()
+    pen.write("lose or gain a heart.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.pencolor("midnightblue")
+    pen.pendown()
+    pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+
+    # Close Graphics
+    # Time to close
+    input("Press Enter to continue...")
+    screen.clear()
+
 
 def playground(hearts):
     screen = turtle.Screen()
@@ -1930,6 +2257,68 @@ def playground(hearts):
     screen.clear()
 
     return hearts
+
+def cafeteriaInstructions():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write("Special Instructions for: The Cafeteria", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.pendown()
+    pen.write("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.pendown()
+    pen.write("Game Instructions: You must complete a Tic Tac Toe Challenge", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.pendown()
+    pen.write("against the computer.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.color("purple")
+    pen.pendown()
+    pen.write("Gaining Hearts: If you win, you earn one heart ❤️.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.color("red")
+    pen.pendown()
+    pen.write("Losing Hearts: If you end up in a tie, you lose a heart. If", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.pendown()
+    pen.write("the computer wins, you lose a heart and lose the game.", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.pencolor("midnightblue")
+    pen.pendown()
+    pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+
+    # Close Graphics
+    # Time to close
+    input("Press Enter to continue...")
+    screen.clear()
+
 
 def cafeteria(hearts):
     screen = turtle.Screen()
