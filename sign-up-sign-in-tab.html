@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="header-for-sign-up.css">
+    <link rel="stylesheet" href="sign-in-sign-up-page.css">
+    <link rel="stylesheet" href="sign-form.css">
+    <script src="sign-form.js"></script>
+    <title>Sign Up Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="left-section">
+       
+        <a href="my-library-tab.html" class="my-library-tab">My Library</a>
+
+        <a href="browse-and-filter-tab.html" class="browse-and-filter-tab">Browse and Filter</a>
+
+        <a href="my-notepad-tab.html" class="my-notepad-tab">My NotePad</a>
+        
+      </div>
+
+      <div class="middle-section">
+
+        <div class="website-name">BookHive</div>
+
+        <img class="bookhive-logo" src="drawings/BookHive Logo-2_processed.jpg">
+
+
+      </div>
+
+      <div class="right-section">
+
+        <input class="search-bar" type="text" placeholder="Search Books...">
+
+        <a href="sign-up-sign-in-tab.html" class="sign-tab">Sign Up/Sign In</a>
+
+
+        
+
+      </div>
+    </div>
+
+
+    <div class="sign-up-sign-in-container">
+
+      <img class="bookhive-page-logo" src="drawings/Sign Up_Sign In Drawing-2.jpg">
+
+      <div class="website-name-quotes-container">
+
+        <div class="website-sign-name">BookHive</div>
+  
+        <div class="website-sign-quote">A Cozy Hive for Your Books.</div>
+  
+        <div class="website-sign-coquote">Add books to your lists, create notes, filter with ease, and discover your next great read—all in one buzzing hive!</div>
+  
+      </div>
+
+      <div class="buttons-container">
+        <button class="sign-in-button-on-website" onclick="toggleForm('sign-in-form')">Sign In</button>
+        <div class="or-word">or</div>
+        <button class="sign-up-button-on-website" onclick="toggleForm('sign-up-form')">Sign Up</button>
+      </div>
+
+      <!--Sign In Form-->
+      <div id="sign-in-form" class="form-container" style="display:none;">
+        <h3>Sign In</h3>
+        <form>
+        
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      
+      <!--Sign Up Form-->
+      <div id="sign-up-form" class="form-container" style="display:none;">
+        <h3>Sign Up</h3>
+        <form>
+          
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+          <input type="email" placeholder="Email" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

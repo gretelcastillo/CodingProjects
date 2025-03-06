@@ -1,0 +1,103 @@
+.header {   
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: #FFF5E1;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #ffe6b5;
+  z-index: 200;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.my-library-tab,
+.browse-and-filter-tab,
+.my-notepad-tab,
+.sign-tab {
+  display: flex;
+  font-size: 18px;
+  font-family: Dancing Script;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  color: black;
+
+  height: 100%;
+  padding: 0 20px;
+  
+}
+
+.middle-section {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.website-name {
+  
+  display: flex;
+  align-items: center;
+  font-family: Dancing Script;
+  font-size: 50px;
+  margin-left: 200px;;
+
+}
+
+.bookhive-logo {
+  width: 95px;
+  padding-top: 10px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  
+}
+
+.search-bar {
+  width: 250px;
+  height: 20px;
+  display: flex;
+  font-size: 18px;
+  font-family: Dancing Script;
+  margin-left: 0px;
+}
+
+.my-library-tab,
+.browse-and-filter-tab,
+.my-notepad-tab,
+.sign-tab {
+    display: inline-flex;
+    font-size: 18px;
+    font-family: Dancing Script;
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    text-decoration: none;
+    color: black;
+}
+
+/* Hover effect */
+.my-library-tab:hover,
+.browse-and-filter-tab:hover,
+.my-notepad-tab:hover,
+.sign-tab:hover {
+    color: #d48806; /* Change text color */
+    background-color: #ffebc6; /* Light background color on hover */
+    
+  
+} 
+

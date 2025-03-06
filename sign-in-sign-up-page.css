@@ -1,0 +1,94 @@
+.sign-up-sign-in-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 100px;
+  max-width: 800px;
+  min-width: 600px;
+  position: relative;
+}
+
+.bookhive-page-logo {
+  width: 450px;
+  height: 500px;
+  margin-right: 100px;
+}
+
+.website-name-quotes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Dancing Script;
+  font-size: 30px;
+  gap: 20px;
+  max-width: 400px;
+  margin-bottom: 90px;
+  
+}
+
+.website-sign-name {
+  font-size: 80px;
+}
+
+.website-sign-coquote {
+  font-size: 20px;
+}
+
+.website-sign-quote,
+.website-sign-coquote {
+  white-space: normal; /* Allows wrapping without excessive line breaks */
+  line-height: 1.5; /* Adds better spacing between lines */
+  max-width: 400px; /* Ensures text stays in a readable format */
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 400px;
+  margin-left: 250px;
+  
+}
+
+.sign-in-button-on-website,
+.sign-up-button-on-website  {
+  border: none;
+  padding-top: 8px;
+  border-radius: 10px;
+  padding-bottom: 8px;
+  padding-right: 46px;
+  padding-left: 46px;
+  background-color: #ffebc6;
+  font-family: Dancing Script;
+  font-size: 20px;
+  cursor: pointer;
+  
+
+}
+
+.or-word {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: Dancing Script;
+  font-size: 20px;
+
+}
+
+.sign-up-button-on-website {
+  margin-left: 20px;
+  
+}
+
+.sign-in-button-on-website:hover,
+.sign-up-button-on-website:hover {
+  background-color: #e6d1a3;
+
+}
+
+.sign-in-button-on-website:active,
+.sign-up-button-on-website:active {
+  background-color: #d1b88b;
+
+}
