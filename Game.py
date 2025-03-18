@@ -2212,6 +2212,9 @@ def playground(hearts):
         # time.sleep(2)
         # print(f"Breaking loop, tries = {tries}")
         #break
+        screen.clear()
+        win()
+
 
 
     #print(f"Checking tries condition: {tries}")
@@ -2224,6 +2227,7 @@ def playground(hearts):
         pen.color("midnightblue")
         pen.pendown()
         pen.write("You won! You have found the ghost!", font=('Comic Sans MS', 24, 'bold'))
+        win()
         # print("All letters guessed! You won!")
         #break
 
@@ -2247,7 +2251,7 @@ def playground(hearts):
     pen.write("Press Enter to continue (on the console)...", font=('Comic Sans MS', 24, 'bold'))
     pen.hideturtle()
 
-    screen.update()
+    #screen.update()
 
     # Close Graphics
     # Time to close
@@ -2631,7 +2635,301 @@ def computer_turn(board):
         if is_valid_move(board, computer_move):
             return computer_move
 
+def win():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
 
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-250, 200)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write("Congratulations! You Won!", font=('Comic Sans MS', 40, 'bold'))
+
+    # Big Heart Left Circle
+    pen.penup()
+    pen.color("red")
+    pen.goto(-40,0)
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(48)
+    pen.end_fill()
+
+    # Big Heart Right Circle
+    pen.penup()
+    pen.color("red")
+    pen.goto(60, 0)
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(48)
+    pen.end_fill()
+
+    # Big Heart Triangle
+    pen.penup()
+    pen.color("red")
+    pen.goto(0, -90)
+    pen.begin_fill()
+    pen.pendown()
+    pen.left(49)
+    pen.forward(160)
+    pen.setheading(180)
+    pen.forward(180)
+
+    pen.penup()
+    pen.goto(0, -90)
+    pen.left(-56)
+    pen.pendown()
+    pen.forward(150)
+    pen.end_fill()
+
+    # Small Left Heart Left Circle
+    pen.penup()
+    pen.color("red")
+    pen.goto(-200, -40)
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(25)
+    pen.end_fill()
+
+    # Small Left Heart Right Circle
+    pen.penup()
+    pen.color("red")
+    pen.goto(-150, -40)
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(25)
+    pen.end_fill()
+
+    # Small Left Heart Triangle
+    pen.penup()
+    pen.color("red")
+    pen.goto(-195, -120)
+    pen.begin_fill()
+    pen.pendown()
+    pen.left(7)
+    pen.forward(60)
+    pen.setheading(0)
+    pen.forward(78)
+
+    pen.penup()
+    pen.goto(-195, -120)
+    pen.left(50)
+    pen.pendown()
+    pen.forward(60)
+    pen.end_fill()
+
+
+
+    # Small Right Heart Left Circle
+    pen.penup()
+    pen.color("red")
+    pen.goto(200, -65)
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(25)
+    pen.end_fill()
+
+    # Small Right Heart Right Circle
+    pen.penup()
+    pen.color("red")
+    pen.goto(250, -65)
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(25)
+    pen.end_fill()
+
+    # Small Right Heart Triangle
+    pen.penup()
+    pen.color("red")
+    pen.goto(212, -120)
+    pen.begin_fill()
+    pen.pendown()
+    pen.left(7)
+    pen.forward(60)
+    pen.setheading(180)
+    pen.forward(78)
+
+    pen.penup()
+    pen.goto(210, -120)
+    pen.left(-50)
+    pen.pendown()
+    pen.forward(60)
+    pen.end_fill()
+
+    # Around symbols
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.write("🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 50)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 20)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -10)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -40)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -70)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -100)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -130)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -160)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -190)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -220)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -250)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    # Around symbols
+    pen.penup()
+    pen.goto(-360, -285)
+    pen.write("✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️🔍📓🔮✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 230)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 200)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 170)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 140)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 110)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 80)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 50)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 20)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -10)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -40)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -70)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -100)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -130)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -170)
+    pen.write("🔍", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -200)
+    pen.write("📓", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -230)
+    pen.write("🔮", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -260)
+    pen.write("✝️", font=('Comic Sans MS', 24, 'bold'))
+
+
+    pen.penup()
+    pen.goto(-360, -245)
+    pen.pencolor("midnightblue")
+    pen.pendown()
+    pen.write("Press Enter to exit game (on the console)...", font=('Comic Sans MS', 24, 'bold'))
+    pen.hideturtle()
+
+    screen.update()
+
+    # Close Graphics
+    # Time to close
+
+    input("Press Enter to continue...")
+
+    screen.clear()
 
 
 main()
