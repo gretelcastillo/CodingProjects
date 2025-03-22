@@ -2931,5 +2931,413 @@ def win():
 
     screen.clear()
 
+def lose():
+    screen = turtle.Screen()
+    screen.title("Ghost Hunter")
+    screen.setup(800, 600)
+    screen.bgcolor("black")
+
+    pen = turtle.Turtle()
+    pen.speed(0)
+
+    # Write Title
+    pen.penup()
+    pen.goto(-250, 200)
+    pen.pencolor("midnightblue")
+    pen.pensize(10)
+    pen.hideturtle()
+    pen.pendown()
+    pen.write("Game Over! You Lost!", font=('Comic Sans MS', 40, 'bold'))
+
+    pen.color("white")
+    pen.pensize(3)
+
+    # Draw Ghost Design
+
+    # Ghost Head
+    pen.penup()
+    pen.goto(0, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.fillcolor("white")
+    pen.circle(100)
+    pen.end_fill()
+
+    # Right End Circle
+    pen.penup()
+    pen.goto(100, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(36)
+    pen.end_fill()
+
+    # Right Middle Circle
+    pen.penup()
+    pen.goto(50, -125)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(36)
+    pen.end_fill()
+
+    # Middle Circle
+    pen.penup()
+    pen.goto(0, -150)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(36)
+    pen.end_fill()
+
+    # Right Middle Circle
+    pen.penup()
+    pen.goto(-50, -125)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(36)
+    pen.end_fill()
+
+    # Left End Circle
+    pen.penup()
+    pen.goto(-100, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(36)
+    pen.end_fill()
+
+    # Ghost Eyes
+
+    # Left Eye
+    pen.penup()
+    pen.goto(-25, 20)
+    pen.pendown()
+    pen.begin_fill()
+    pen.fillcolor("black")
+    pen.circle(10)
+    pen.end_fill()
+
+    # Right Eye
+    pen.penup()
+    pen.goto(25, 20)
+    pen.pendown()
+    pen.begin_fill()
+    pen.fillcolor("black")
+    pen.circle(10)
+    pen.end_fill()
+
+    # Ghost Mouth
+    pen.color("black")
+    pen.penup()
+    pen.goto(-25, -20)
+    pen.pendown()
+
+    # Squiggly mouth
+    pen.forward(10)
+    pen.left(25)
+    pen.forward(10)
+    pen.right(25)
+    pen.forward(10)
+    pen.left(-25)
+    pen.forward(10)
+    pen.right(-25)
+    pen.forward(10)
+
+    # Small Left Ghost
+    pen.penup()
+    pen.goto(-250, -100)
+    pen.pencolor("white")
+    pen.fillcolor("white")
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(30)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-250, -120)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-230, -110)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-270, -110)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-220, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-280, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-260, -68)
+    pen.pendown()
+    pen.fillcolor("black")
+    pen.begin_fill()
+    pen.circle(5)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-243, -68)
+    pen.pendown()
+    pen.fillcolor("black")
+    pen.begin_fill()
+    pen.circle(5)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(-255, -75)
+    pen.pendown()
+    pen.pencolor("black")
+    pen.forward(8)
+
+    # Small Right Ghost
+    pen.penup()
+    pen.goto(245, -100)
+    pen.pencolor("white")
+    pen.fillcolor("white")
+    pen.begin_fill()
+    pen.pendown()
+    pen.circle(30)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(245, -120)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(225, -110)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(265, -110)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(215, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(275, -100)
+    pen.pendown()
+    pen.begin_fill()
+    pen.circle(15)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(235, -68)
+    pen.pendown()
+    pen.fillcolor("black")
+    pen.begin_fill()
+    pen.circle(5)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(252, -68)
+    pen.pendown()
+    pen.fillcolor("black")
+    pen.begin_fill()
+    pen.circle(5)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(240, -75)
+    pen.pendown()
+    pen.pencolor("black")
+    pen.forward(8)
+
+    # Around symbols
+    pen.penup()
+    pen.goto(-390, 260)
+    pen.pencolor("midnightblue")
+    pen.write("👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 230)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 200)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 170)
+    pen.write("👻️", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 140)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 110)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 80)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 50)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, 20)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -10)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -40)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -70)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -100)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -130)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -160)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -190)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -220)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -250)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(-390, -280)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    # Around symbols
+    pen.penup()
+    pen.goto(-360, -285)
+    pen.write("👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 230)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 200)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 170)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 140)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 110)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 80)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 50)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, 20)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -10)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -40)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -70)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -100)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -130)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -170)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -200)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -230)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+    pen.penup()
+    pen.goto(360, -260)
+    pen.write("👻", font=('Comic Sans MS', 24, 'bold'))
+
+
+    pen.penup()
+    pen.goto(-340, -245)
+    pen.pendown()
+    pen.color("white")
+    pen.write("Press Enter to exit game (on the console)...", font=('Comic Sans MS', 18, 'bold'))
+
+    # Close Graphics
+    pen.hideturtle()
+    screen.update()
+    # Time to close
+    input("Press Enter to continue...")
+    pen.clear()
+
 
 main()
