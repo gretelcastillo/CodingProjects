@@ -48,19 +48,20 @@ def main():
             hearts = principalOffice(hearts)
         elif roomNum == 2:
             msMimiClassInstructions()
-            msMimiClass(hearts)
+            hearts = msMimiClass(hearts)
         elif roomNum == 3:
             gymInstructions()
-            gym(hearts)
+            hearts = gym(hearts)
         elif roomNum == 4:
             playgroundInstructions()
-            playground(hearts)
+            hearts = playground(hearts)
         elif roomNum == 5:
             cafeteriaInstructions()
-            cafeteria(hearts)
+            hearts = cafeteria(hearts)
 
         if hearts <= 0:
             print("Game Over! You lost all your hearts.")
+            lose()
             break
 
         continue_choice = input("Do you want to go to another room? (Y/N): ").lower()
@@ -298,7 +299,7 @@ def instructions():
     pen.goto(-390, -210)
     pen.pendown()
     pen.color("white")
-    pen.write("You are given two minutes to read this and decide on your number...", font=('Comic Sans MS', 18, 'bold'))
+    pen.write("You are given one minute to read this and decide on your number...", font=('Comic Sans MS', 18, 'bold'))
 
     pen.penup()
     pen.goto(-390, -300)
@@ -307,10 +308,9 @@ def instructions():
     pen.hideturtle()
     screen.update()
     # Time to close
-    time.sleep(5)
+    time.sleep(60)
     pen.clear()
 
-    #screen.bye()
 
 
 def paranormalInvestigator():
@@ -526,32 +526,18 @@ def specialInstructions():
     pen.penup()
     pen.goto(-390, -20)
     pen.pendown()
-    pen.write("Using Hearts to Skip Games: If you want to skip a mini-game,", align="left", font=('Comic Sans MS', 24, 'bold'))
+    pen.write("Losing Hearts: If you take too long on a task or fail to complete", align="left", font=('Comic Sans MS', 24, 'bold'))
 
     pen.penup()
     pen.goto(-390, -50)
     pen.pendown()
-    pen.write("you can use one heart. Be careful, though-this will cost you a", align="left", font=('Comic Sans MS', 24, 'bold'))
+    pen.write("it in time, you will lose a heart. Keep an eye on your hearts, as", align="left", font=('Comic Sans MS', 24, 'bold'))
 
     pen.penup()
     pen.goto(-390, -80)
     pen.pendown()
-    pen.write("heart, so use it wisely!", align="left", font=('Comic Sans MS', 24, 'bold'))
-
-    pen.penup()
-    pen.goto(-390, -110)
-    pen.pendown()
-    pen.write("Losing Hearts: If you take too long on a task or fail to complete",align="left", font=('Comic Sans MS', 24, 'bold'))
-
-    pen.penup()
-    pen.goto(-390, -140)
-    pen.pendown()
-    pen.write("it in time, you will lose a heart. Keep an eye on your hearts, as", align="left", font=('Comic Sans MS', 24, 'bold'))
-
-    pen.penup()
-    pen.goto(-390, -170)
-    pen.pendown()
     pen.write("running out means game over!", align="left", font=('Comic Sans MS', 24, 'bold'))
+
 
     pen.penup()
     pen.goto(-390, -250)
@@ -933,7 +919,7 @@ def principalOffice(hearts):
     title_pen.write("You have entered: Principal's Office", font=('Comic Sans MS', 30, 'bold'))
 
     title_pen.goto(-390, 230)
-    title_pen.write("Task: Guess a number between 1-10 (use the console): ", font=('Comic Sans MS', 24, 'bold'))
+    title_pen.write("Task: Guess a number between 1-10 (use the console): ", font=('Comic Sans MS', 20, 'bold'))
 
     randNum = random.randint(1, 10)
 
@@ -944,7 +930,7 @@ def principalOffice(hearts):
     while userGuess != randNum and numOfGuesses < 5:
         try:
 
-            userGuess = int(input("Task: Guess a number between 1 -10 (use the console): "))
+            userGuess = int(input("Task: Guess a number between 1 -10: "))
 
             guess_pen.clear()
             feedback_pen.clear()
@@ -1141,7 +1127,7 @@ def msMimiClass(hearts):
     title_pen.write("You have entered: Ms. Mimi's Class", font=('Comic Sans MS', 30, 'bold'))
 
     title_pen.goto(-390, 230)
-    title_pen.write("Task: Playing Rock, Paper, Scissors with the computer (use the console): ", font=('Comic Sans MS', 24, 'bold'))
+    title_pen.write("Task: Playing Rock, Paper, Scissors with the computer (use the console): ", font=('Comic Sans MS', 20, 'bold'))
 
     rounds = 3
 
@@ -1164,9 +1150,10 @@ def msMimiClass(hearts):
 
         playerHand = input("Choose either rock, paper, or scissors by entering 'R', 'P' or 'S': ")
 
-        while playerHand != "R" and playerHand != "P" and playerHand != "S":
+        while playerHand != "R" and playerHand != "P" and playerHand != "S" and playerHand != "Q":
             print('Invalid choice.')
             playerHand = input("Choose either rock, paper, or scissors by entering 'R', 'P' or 'S':")
+
 
         if playerHand == 'R':
             playerChoice = "Rock"
@@ -1209,6 +1196,8 @@ def msMimiClass(hearts):
             print("You lost all your hearts! Game over.")
             result_pen.goto(-390, -20)
             result_pen.write("You lost all your hearts! Game over.", font=('Comic Sans MS', 24, 'bold'))
+            screen.clear()
+            lose()
             break
 
         #result_pen.write(result, font=('Comic Sans MS', 24, 'bold'))
@@ -1436,7 +1425,7 @@ def gym(hearts):
         pen.penup()
         pen.goto(-390, -260)
         pen.pendown()
-        pen.write("Enter word (on the console): ",font=('Comic Sans MS', 24, 'bold'))
+        pen.write("Enter word (on the console) or '*' to quit: ",font=('Comic Sans MS', 24, 'bold'))
         userWord = input("Enter word: ").strip().lower()
 
         if userWord in words_to_find:
@@ -1615,6 +1604,8 @@ def gym(hearts):
         pen.goto(-390, 60)
         pen.pendown()
         pen.write("You lost all your hearts! Game Over.", font=("Comic Sans MS", 24, "bold"))
+        screen.clear()
+        lose()
 
     pen.penup()
     pen.goto(-390, -280)
@@ -2242,6 +2233,8 @@ def playground(hearts):
         pen.color("midnightblue")
         pen.pendown()
         pen.write("Game Over! You lost! The ghost got you!", font=('Comic Sans MS', 24, 'bold'))
+        screen.clear()
+        lose()
         #break  # Exit the loop since the game is over
 
 
@@ -2551,6 +2544,8 @@ def cafeteria(hearts):
             pen.pendown()
             pen.write("Computer wins! Game Over!", font=('Comic Sans MS', 24, 'bold'))
             print("Computer wins! Game Over!", end="")
+            screen.clear()
+            lose()
             break
 
         if is_board_full(board):
